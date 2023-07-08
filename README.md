@@ -40,15 +40,15 @@ cd todo-flask/
 docker compose up -d
 ```
 
-![docker compose](images/docker-compose.png?raw=true "docker compose")
+![docker compose up](images/docker-compose.png?raw=true "docker compose up")
 
 ##### Check services
 
 ```
-docker ps
+docker compose ps
 ```
 
-![docker ps](images/docker-ps.png?raw=true "docker ps")
+![docker compose ps](images/docker-ps.png?raw=true "docker compose ps")
 
 ##### Copy script
 
@@ -69,7 +69,7 @@ EDITOR=nvim crontab -e
 ##### Add cronjobs (auto backup at 23:59 every day)
 
 ```
-59 23 * * * /bin/sh ~/backup.sh
+59 23 * * * /bin/bash /home/thujuli/backup.sh
 ```
 
 ![add cronjobs](images/add-cronjobs.png?raw=true "add cronjobs")
@@ -109,7 +109,7 @@ bash script/restore.sh
 ##### Exec psql on flask-psql service
 
 ```
-docker exec -it flask-psql -U postgres
+docker exec -it flask-psql psql -U postgres
 ```
 
 ![docker exec](images/docker-exec.png?raw=true "docker exec")
