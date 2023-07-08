@@ -16,8 +16,6 @@ This repository discuss about, How do i deploy [todo-flask](https://github.com/t
 
 ##### Clone repository [todo-flask](https://github.com/thujuli/todo-flask "todo-flask")
 
-![clone repository](images/git-clone.png?raw=true "clone repository")
-
 ```
 # clone repository (ssh)
 git clone git@github.com:thujuli/todo-flask.git
@@ -26,98 +24,100 @@ git clone git@github.com:thujuli/todo-flask.git
 git clone https://github.com/thujuli/todo-flask.git
 ```
 
-##### Change directory
+![clone repository](images/git-clone.png?raw=true "clone repository")
 
-![change directory](images/cd-todo.png?raw=true "change directory")
+##### Change directory
 
 ```
 cd todo-flask/
 ```
 
-##### Running docker compose
+![change directory](images/cd-todo.png?raw=true "change directory")
 
-![docker compose](images/docker-compose.png?raw=true "docker compose")
+##### Running docker compose
 
 ```
 docker compose up -d
 ```
 
-##### Check services
+![docker compose](images/docker-compose.png?raw=true "docker compose")
 
-![docker ps](images/docker-ps.png?raw=true "docker ps")
+##### Check services
 
 ```
 docker ps
 ```
 
-##### Copy script
+![docker ps](images/docker-ps.png?raw=true "docker ps")
 
-![copy script](images/cp-script.png?raw=true "copy script")
+##### Copy script
 
 ```
 cp script/backup.sh ~
 ```
 
-##### Edit crontab (using nvim)
+![copy script](images/cp-script.png?raw=true "copy script")
 
-![edit crontab](images/edit-crontab.png?raw=true "edit crontab")
+##### Edit crontab (using nvim)
 
 ```
 EDITOR=nvim crontab -e
 ```
 
-##### Add cronjobs (auto backup at 23:59 every day)
+![edit crontab](images/edit-crontab.png?raw=true "edit crontab")
 
-![add cronjobs](images/add-cronjobs.png?raw=true "add cronjobs")
+##### Add cronjobs (auto backup at 23:59 every day)
 
 ```
 59 23 * * * /bin/sh ~/backup.sh
 ```
 
-##### Exit nvim
+![add cronjobs](images/add-cronjobs.png?raw=true "add cronjobs")
 
-![exit nvim](images/exit-nvim.png?raw=true "exit nvim")
+##### Exit nvim
 
 ```
 :wq
 ```
 
-##### List documents (because, backup file store in documents)
+![exit nvim](images/exit-nvim.png?raw=true "exit nvim")
 
-![list documents](images/ls-documents.png?raw=true "list documents")
+##### List documents (because, backup file store in documents)
 
 ```
 ls ~/Documents/
 ```
 
-##### Copy backup file to postgres services
+![list documents](images/ls-documents.png?raw=true "list documents")
 
-![copy backup file](images/copy.png?raw=true "copy backup file")
+##### Copy backup file to postgres services
 
 ```
 bash script/copy.sh
 ```
 
-##### Restore database from backup file
+![copy backup file](images/copy.png?raw=true "copy backup file")
 
-![restore database](images/restore.png?raw=true "restore database")
+##### Restore database from backup file
 
 ```
 bash script/restore.sh
 ```
 
-##### Exec psql on flask-psql service
+![restore database](images/restore.png?raw=true "restore database")
 
-![docker exec](images/docker-exec.png?raw=true "docker exec")
+##### Exec psql on flask-psql service
 
 ```
 docker exec -it flask-psql -U postgres
 ```
 
-##### List database
+![docker exec](images/docker-exec.png?raw=true "docker exec")
 
-![list database](images/db-list.png?raw=true "list database")
+##### List database
 
 ```
 \l
 ```
+
+![list database](images/db-list.png?raw=true "list database")
